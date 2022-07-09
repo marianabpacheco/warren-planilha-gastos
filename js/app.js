@@ -1,4 +1,4 @@
-
+//criação dos modais de receita e despesa
 
 const switchModalDespesa = () => {
     const modal =   document.querySelector('.modal-despesa');
@@ -32,3 +32,20 @@ btnCancelarDespesa.addEventListener('click', switchModalDespesa);
 btnCancelarReceita.addEventListener('click', switchModalReceita);
 
 
+
+// função para capturar valores e adicionar receita e despesa
+const adicionarReceita = () => {
+    let nomeReceita = document.getElementById('nome-receita').value;
+    let valorReceita = parseFloat(document.getElementById('valor-receita').value);
+
+
+    document.querySelector('.modal-receita').style.display = 'none';
+}
+
+const adicionarDespesa = () => {
+    let nomeDespesa= document.getElementById('nome-despesa').value;
+    let valorDespesa = parseFloat(document.getElementById('valor-despesa').value);
+
+
+    document.querySelector('.modal-despesa').style.display = 'none';
+}

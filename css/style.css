@@ -138,5 +138,15 @@ h1 {
     align-items: center;
 }
 
+.botoes .btn-adicionar-despesa,
+.botoes .btn-adicionar-receita {
+    background-color: #E02B57;
+    color: #fff;
+  }
 
 
+  .botoes .btn-cancelar-despesa,
+  .botoes .btn-cancelar-receita {
+    background-color: #fff;
+    color: #E02B57;
+  }
