@@ -36,15 +36,15 @@ btnCancelarReceita.addEventListener('click', switchModalReceita);
 // função para capturar valores e adicionar receita e despesa
 const adicionarReceita = () => {
     let nomeReceita = document.getElementById('nome-receita').value;
-    let valorReceita = parseFloat(document.getElementById('valor-receita').value);
-
+    let valorReceita = parseFloat(document.getElementById('valor-receita').value.replace(",", "."));
+    console.log(valorReceita)
 
     document.querySelector('.modal-receita').style.display = 'none';
 }
 
 const adicionarDespesa = () => {
     let nomeDespesa= document.getElementById('nome-despesa').value;
-    let valorDespesa = parseFloat(document.getElementById('valor-despesa').value);
+    let valorDespesa = parseFloat(document.getElementById('valor-despesa').value.replace(",", "."));
 
 
     document.querySelector('.modal-despesa').style.display = 'none';
