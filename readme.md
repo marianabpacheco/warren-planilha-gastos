@@ -26,3 +26,53 @@
     
     * * * * * * * *
 */
+
+
+/*
+    * * * * * * * *
+    
+    DESAFIO PLANILHA DE GASTOS:
+    
+    1. Monte um objeto 'financas' que represente os dados apresentados 
+    nessa planilha de gastos.
+    
+    Esse objeto financas deve conter um campo 'saldo' e um array
+    'transacoes'. Esse array deve ser composto de objetos que contém os
+    campos 'descricao', 'categoria' e 'valor'.
+    
+    2. Desenvolva uma função que exiba no console (console.log) os 
+    valores do objeto 'transacoes' nesse formato:
+
+    Saldo: R$ 10,00
+    
+    Transacao 1:
+    [Despesa] Salgado na faculdade
+    R$ 5,50
+    
+    Transacao 2:
+    [Despesa] Livro Clean Code
+    R$ 50,00
+    
+    Transacao 3:
+    [Receita] Grana do estágio
+    R$ 80,00
+    
+    Transacao 4:
+    [Despesa] Capinha pro celular
+    R$ 15,00 
+    
+    
+    3. Na função de adicionar despesa desenvolvida no exercício passado,
+    monte a resposta recebida do usuário em um objeto no formado:
+    { descricao: '', valor: 0.00, categoria: '' }
+    sendo a categoria o texto 'Despesa' ou 'Receita'.
+    Depois adicione esse objeto no array de transacoes do objeto financas
+    criado no primeiro exercício.
+    Outra atualização do objeto financas é o saldo. Case esteja adicionando
+    uma receita, você deve somar o valor digitado pelo usuário. Caso seja 
+    uma despesa, você deve subtrair o valor digitado pelo usuário.
+    
+    Faça a mesma coisa com a função adicionar receita.
+    
+    * * * * * * * *
+*/
