@@ -87,5 +87,3 @@ const adicionarDespesa = () => {
 
     document.querySelector('.modal-despesa').style.display = 'none';
 }
-
-console.log()
