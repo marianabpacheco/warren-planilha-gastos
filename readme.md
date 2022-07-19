@@ -76,3 +76,28 @@
     
     * * * * * * * *
 */
+/*
+    * * * * * * * *
+    
+    DESAFIO PLANILHA DE GASTOS:
+    
+    Nesse exercício é necessário preencher na tela os dados do objeto 'financas'.
+    
+    1. Desenvolva uma função que exibe o financas.saldo no lugar do texto
+    'Carregando saldo...'.
+    
+    2. Desenvolva uma função que exibe financas.transacoes na tabela no lugar do
+    texto 'Carregando dados...'. Para cada transacao será necessário criar
+    uma nova linha na tabela, e para cada propriedade uma nova coluna. As
+    colunas devem ter o atributo classe como 'coluna-*****' substituindo o
+    ***** pelo nome da propriedade, como 'coluna-descricao', 'coluna-categoria'
+    ou 'coluna-valor'.
+    
+    3. Para que os botões Adicionar despesa e Adicionar receita funcionem é
+    necessário atribuir as funções de prompt criadas na primeira semana ao clique
+    desses botões. E depois de adicionar o resultado ao objeto financas, chame as 
+    funções de exibicação de dados criadas nos exercícios acima para que os valores
+    da tela sejam atualizados.
+    
+    * * * * * * * *
+*/
