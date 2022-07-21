@@ -41,40 +41,40 @@ function formatarDescricao(descricao) {
 
 
 // criação de objeto
-const financas = {
-    saldo: 10,
-    transacoes: [
-      {
-        descricao: 'Salgado na faculdade',
-        categoria: 'Despesa',
-        valor: 5.5
-      },
-      {
-        descricao: 'Livro Clean Code',
-        categoria: 'Despesa',
-        valor: 50
-      },
-      {
-        descricao: 'Grana do estágio',
-        categoria: 'Receita',
-        valor: 80
-      },
-      {
-        descricao: 'Capinha pro celular',
-        categoria: 'Despesa',
-        valor: 15
-      },
-    ]
-  };
+// const financas = {
+//     saldo: 10,
+//     transacoes: [
+//       {
+//         descricao: 'Salgado na faculdade',
+//         categoria: 'Despesa',
+//         valor: 5.5
+//       },
+//       {
+//         descricao: 'Livro Clean Code',
+//         categoria: 'Despesa',
+//         valor: 50
+//       },
+//       {
+//         descricao: 'Grana do estágio',
+//         categoria: 'Receita',
+//         valor: 80
+//       },
+//       {
+//         descricao: 'Capinha pro celular',
+//         categoria: 'Despesa',
+//         valor: 15
+//       },
+//     ]
+//   };
   
-const setSaldo = () => {
-  document.getElementById('saldo').innerHTML = `Saldo: ${formatarValor(financas.saldo)}`
+const setSaldo = (saldo) => {
+  document.getElementById('saldo').innerHTML = `Saldo: ${formatarValor(saldo)}`
 }
-setSaldo()
 
-const adicionarTransacoes = () => {
+
+const adicionarTransacoes = (transacoes) => {
   let tabela = '';
-  financas.transacoes.reverse().forEach(transacao => {
+  transacoes.reverse().forEach(transacao => {
     let linha = `<tr>
                     <td class="coluna-descricao">${formatarDescricao(transacao.descricao)}</td>
                     <td class="coluna-categoria">${transacao.categoria}</td>
@@ -85,7 +85,6 @@ const adicionarTransacoes = () => {
   document.getElementById('lista-transacoes-conteudo').innerHTML = tabela;
   
 }
-adicionarTransacoes()
 // função para capturar valores e adicionar receita e despesa
 const adicionarReceita = () => {
     let nomeReceita = document.getElementById('nome-receita').value;
@@ -95,9 +94,11 @@ const adicionarReceita = () => {
         valor: valorReceita,
         categoria:'Receita'
     }
-    financas.transacoes.push(receita);
-    financas.saldo = financas.saldo + valorReceita
-    setSaldo()
+    // financas.transacoes.push(receita);
+    // financas.saldo = financas.saldo + valorReceita
+    // setSaldo()
+    // adicionarTransacoes()
+    postData(receita)
     document.querySelector('.modal-receita').style.display = 'none';
     document.getElementById('nome-receita').value = ''
     document.getElementById('valor-receita').value = '';
@@ -112,19 +113,34 @@ const adicionarDespesa = () => {
         valor: valorDespesa,
         categoria:'Despesa'
     }
-    financas.transacoes.push(despesa);
-    financas.saldo = financas.saldo - valorDespesa
+    // financas.transacoes.push(despesa);
+    // financas.saldo = financas.saldo - valorDespesa
   
-    setSaldo()
-
+    // setSaldo()
+    // adicionarTransacoes()
+    postData(despesa)
     document.querySelector('.modal-despesa').style.display = 'none';
     document.getElementById('nome-despesa').value = ''
     document.getElementById('valor-despesa').value = ''
 }
 
-// Adicionar função de adicionar transação aos respectivos botões
-document.querySelector('.btn-adicionar-despesa').addEventListener('click',adicionarTransacoes)
-document.querySelector('.btn-adicionar-receita').addEventListener('click',adicionarTransacoes)
 
 
-console.log(financas)
+
+// API
+const getData = async () => {
+  const url = 'https://run.mocky.io/v3/ba2007f7-04ea-465b-985e-b16c11e8061d'
+  //comunicação com a API
+  const response = await fetch(url)
+  const financas = await response.json()
+  adicionarTransacoes(financas.transacoes)
+  setSaldo(financas.saldo)
+
+}
+
+getData();
+
+const postData = async (transacao) => {
+  const url = 'https://run.mocky.io/v3/ba2007f7-04ea-465b-985e-b16c11e8061d';
+  const requisicao = await fetch(url, {method: 'POST', body: JSON.stringify(transacao)})
+}
