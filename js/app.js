@@ -99,6 +99,7 @@ const adicionarReceita = () => {
     // setSaldo()
     // adicionarTransacoes()
     postData(receita)
+    getData()
     document.querySelector('.modal-receita').style.display = 'none';
     document.getElementById('nome-receita').value = ''
     document.getElementById('valor-receita').value = '';
@@ -119,6 +120,7 @@ const adicionarDespesa = () => {
     // setSaldo()
     // adicionarTransacoes()
     postData(despesa)
+    getData()
     document.querySelector('.modal-despesa').style.display = 'none';
     document.getElementById('nome-despesa').value = ''
     document.getElementById('valor-despesa').value = ''
