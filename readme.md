@@ -101,3 +101,34 @@
     
     * * * * * * * *
 */
+
+/*
+    * * * * * * * *
+   DESAFIO PLANILHA DE GASTOS:
+
+    Nesse exercício vamos integrar com dados da API ao invés de trabalhar
+    com um objeto local.
+    
+    1. Primeiramente é necessário criar uma função que chama um GET na seguinte
+    API: https://run.mocky.io/v3/ba2007f7-04ea-465b-985e-b16c11e8061d
+    
+    O resultado será usado para preencher o saldo e transacoes na tela.
+    Use as funções criadas no exercício anterior para preencher os dados na tela,
+    a única diferença é que agora a fonte dos dados é uma API e não o objeto
+    local.
+    
+    2. Nas funções de clique da receita e despesa, não precisaremos mais atribuir
+    valores ao objeto local. Agora precisaremos integrar com uma API para enviar 
+    os dados digitados pelo usuário. Então integre com a seguinte API: 
+    https://run.mocky.io/v3/c50981e7-1c9b-471c-9128-3adf362cf36f
+    Envie nessa API um POST com os dados digitados pelo usuário em um objeto
+    no formato: { descricao: '', valor: 0 }
+    Toda a validação de número continua valendo.
+    
+    3. Depois de enviar os dados digitados pelo cliente para a API é necessário
+    buscar novamente os dados para exibir na tela. Deve-se chamar a função de
+    busca de dados ao final da função de clique dos botões de despesa e receita.
+    
+    * * * * * * * *
+*/
+/*
